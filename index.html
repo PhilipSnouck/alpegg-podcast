@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alpegg — Een Familiepodcast</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&display=swap');
+
+    :root {
+      --cream: #f5f0e8;
+      --warm-white: #faf7f2;
+      --brown: #5c4a32;
+      --brown-light: #8b7355;
+      --brown-muted: #b8a48c;
+      --accent: #7c6248;
+      --text: #3a2e22;
+      --text-muted: #7a6a58;
+      --border: #d4c9b8;
+      --done: #6b8f71;
+      --in-progress: #c4853a;
+      --todo: #9a9089;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: var(--cream);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    /* ── Header ── */
+    header {
+      background-color: var(--warm-white);
+      border-bottom: 1px solid var(--border);
+      padding: 60px 40px 48px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--brown-muted);
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(3rem, 8vw, 5.5rem);
+      font-weight: 400;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    h1 span { color: var(--accent); }
+
+    .tagline {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 560px;
+      margin: 0 auto 32px;
+    }
+
+    .meta-pills {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .pill {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      background: var(--cream);
+    }
+
+    /* ── Main layout ── */
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 64px 32px;
+    }
+
+    section { margin-bottom: 72px; }
+
+    .section-label {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--brown-muted);
+      margin-bottom: 28px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    p { color: var(--text-muted); font-size: 0.92rem; }
+
+    /* ── Doel box ── */
+    .doel-box {
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 4px;
+      padding: 24px 28px;
+      font-size: 0.95rem;
+      color: var(--text);
+      line-height: 1.75;
+    }
+
+    .doel-box em { font-family: 'Playfair Display', serif; font-style: italic; }
+
+    /* ── Roadmap ── */
+    .phases { display: flex; flex-direction: column; gap: 24px; }
+
+    .phase {
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .phase-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 18px 24px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .phase-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      color: var(--brown-muted);
+      min-width: 28px;
+    }
+
+    .phase-title { font-size: 0.95rem; font-weight: 500; color: var(--text); flex: 1; }
+
+    .status-badge {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border-radius: 12px;
+    }
+
+    .status-badge.todo    { background: #f0ede8; color: var(--todo); }
+    .status-badge.active  { background: #fdf3e7; color: var(--in-progress); border: 1px solid #e8c898; }
+    .status-badge.done    { background: #eef4ef; color: var(--done); }
+
+    .phase-tasks { padding: 4px 0 8px; }
+
+    .task {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 24px;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      border-bottom: 1px solid #ede9e2;
+    }
+
+    .task:last-child { border-bottom: none; }
+
+    .task-icon {
+      margin-top: 2px;
+      font-size: 0.8rem;
+      min-width: 16px;
+    }
+
+    .task.done-task { color: #8faa93; }
+    .task.done-task .task-icon { color: var(--done); }
+
+    /* ── Episodes ── */
+    .episodes { display: flex; flex-direction: column; gap: 2px; }
+
+    .ep-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .ep-row:first-child { border-top: 1px solid var(--border); }
+
+    .ep-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--brown-muted);
+      min-width: 28px;
+      padding-top: 2px;
+    }
+
+    .ep-content { flex: 1; }
+    .ep-title { font-size: 0.92rem; font-weight: 500; color: var(--text); margin-bottom: 3px; }
+    .ep-desc  { font-size: 0.82rem; color: var(--text-muted); }
+
+    .ep-tag {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 3px 9px;
+      border-radius: 10px;
+      background: #f0ede8;
+      color: var(--brown-muted);
+      white-space: nowrap;
+      margin-top: 3px;
+    }
+
+    .ep-tag.bonus { background: #f7f0e6; color: var(--in-progress); }
+
+    /* ── Vaste structuur ── */
+    .structuur-list { display: flex; flex-direction: column; gap: 0; }
+
+    .struct-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.875rem;
+    }
+
+    .struct-row:first-child { border-top: 1px solid var(--border); }
+
+    .struct-n {
+      min-width: 20px;
+      font-family: 'Playfair Display', serif;
+      color: var(--brown-muted);
+      font-size: 1rem;
+      padding-top: 1px;
+    }
+
+    .struct-title { font-weight: 500; color: var(--text); }
+    .struct-note  { font-size: 0.8rem; color: var(--text-muted); margin-top: 1px; }
+
+    /* ── Rollen ── */
+    .rollen-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    .rol-card {
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 20px;
+    }
+
+    .rol-label {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--brown-muted);
+      margin-bottom: 8px;
+    }
+
+    .rol-name  { font-size: 0.92rem; font-weight: 500; color: var(--text); margin-bottom: 6px; }
+    .rol-desc  { font-size: 0.8rem; color: var(--text-muted); }
+
+    /* ── Tech overview ── */
+    .tech-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+
+    .tech-card {
+      background: var(--warm-white);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 20px 22px;
+    }
+
+    .tech-step {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--brown-muted);
+      margin-bottom: 8px;
+    }
+
+    .tech-title { font-size: 0.9rem; font-weight: 500; color: var(--text); margin-bottom: 6px; }
+    .tech-detail { font-size: 0.8rem; color: var(--text-muted); }
+    .tech-detail a { color: var(--accent); text-decoration: none; }
+
+    /* ── Kosten ── */
+    .kosten-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+    .kosten-table th, .kosten-table td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border); }
+    .kosten-table th { font-weight: 500; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--brown-muted); background: var(--warm-white); }
+    .kosten-table td { color: var(--text-muted); }
+    .kosten-table tr.total td { color: var(--text); font-weight: 500; border-top: 2px solid var(--border); }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 40px;
+      border-top: 1px solid var(--border);
+      font-size: 0.78rem;
+      color: var(--brown-muted);
+      letter-spacing: 0.05em;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="eyebrow">Een familiepodcast</div>
+  <h1>Alpegg<span>.</span></h1>
+  <p class="tagline">Opdat de bijzondere verhalen van Alpegg blijven leven, voor het nageslacht.</p>
+  <div class="meta-pills">
+    <span class="pill">Besloten</span>
+    <span class="pill">9 afleveringen + 2 bonus</span>
+    <span class="pill">Tijdcapsule</span>
+    <span class="pill">Philip (productie)</span>
+  </div>
+</header>
+
+<main>
+
+  <!-- DOEL -->
+  <section>
+    <div class="section-label">Doel</div>
+    <div class="doel-box">
+      Een <em>besloten familiepodcast</em> voor de huidige en toekomstige generaties: een tijdcapsule
+      waarin de stemmen, verhalen en herinneringen van wie Alpegg dragen voor altijd bewaard blijven.
+    </div>
+  </section>
+
+  <!-- ROADMAP -->
+  <section>
+    <div class="section-label">Roadmap — Productiefasen</div>
+    <div class="phases">
+
+      <div class="phase">
+        <div class="phase-header">
+          <div class="phase-num">1</div>
+          <div class="phase-title">Opzet &amp; Voorbereiding</div>
+          <span class="status-badge todo">Te doen</span>
+        </div>
+        <div class="phase-tasks">
+          <div class="task">
+            <span class="task-icon">○</span>
+            Apparatuur regelen — Zoom H6 of H8 + microfoons huren
+          </div>
+          <div class="task">
+            <span class="task-icon">○</span>
+            Royalty-vrije jingles kiezen (Pixabay / Free Music Archive)
+          </div>
+          <div class="task">
+            <span class="task-icon">○</span>
+            Akoestiek testen in het chalet (kussens, dekens, gordijnen)
+          </div>
+          <div class="task">
+            <span class="task-icon">○</span>
+            Testronde thuis: 15 min opnemen + monteren met twee mensen
+          </div>
+          <div class="task">
+            <span class="task-icon">○</span>
+            GarageBand template bouwen (10 tracks, vaste structuur)
+          </div>
+          <div class="task">
+            <span class="task-icon">○</span>
+            Aankondigingen per rubriek inspreken (familielid, één keer)
+          </div>
+        </div>
+      </div>
+
+      <div class="phase">
+        <div class="phase-header">
+          <div class="phase-num">2</div>
+          <div class="phase-title">Familiebijdragen verzamelen</div>
+          <span class="status-badge todo">Te doen</span>
+        </div>
+        <div class="phase-tasks">
+          <div class="task">
+            <span class="task-icon">○</span>
+            Openingszinnen inspreken — alle kinderen, vanuit huis
+          </div>
+          <div class="task">
+            <span class="task-icon">○</span>
+            Raadsels voor "Raad het verhaal" inspreken
+          </div>
+          <div class="task">
+            <span class="task-icon">○</span>
+            Filosofische antwoorden ("De vraag van Otto") inspreken
+          </div>
+          <div class="task">
+            <span class="task-icon">○</span>
+            Vaste outro inspreken
+          </div>
+          <div class="task">
+            <span class="task-icon">○</span>
+            Alle bestanden aanleveren bij Philip voor montage
+          </div>
+        </div>
+      </div>
+
+      <div class="phase">
+        <div class="phase-header">
+          <div class="phase-num">3</div>
+          <div class="phase-title">Opnamedag(en) in het chalet</div>
+          <span class="status-badge todo">Te plannen</span>
+        </div>
+        <div class="phase-tasks">
+          <div class="task">
+            <span class="task-icon">○</span>
+            Datum prikken — één hoofddag + reservedag
+          </div>
+          <div class="task">
+            <span class="task-icon">○</span>
+            Aflevering 0: "Intro — Wie zijn wij?" opnemen
+          </div>
+          <div class="task">
+            <span class="task-icon">○</span>
+            Kerngesprekken opnemen: Albertine, Hendrik, Bibianne &amp; Frederik
+          </div>
+          <div class="task">
+            <span class="task-icon">○</span>
+            Hosts per aflevering aanwijzen (2–4 kinderen, roulerend)
+          </div>
+        </div>
+      </div>
+
+      <div class="phase">
+        <div class="phase-header">
+          <div class="phase-num">4</div>
+          <div class="phase-title">Productie per aflevering</div>
+          <span class="status-badge todo">Herhalend</span>
+        </div>
+        <div class="phase-tasks">
+          <div class="task">
+            <span class="task-icon">○</span>
+            Opnames importeren in GarageBand template
+          </div>
+          <div class="task">
+            <span class="task-icon">○</span>
+            Montage &amp; editing door Philip
+          </div>
+          <div class="task">
+            <span class="task-icon">○</span>
+            Exporteren als MP3 uit GarageBand
+          </div>
+          <div class="task">
+            <span class="task-icon">○</span>
+            Upload naar Auphonic → ruisverwijdering + mastering downloaden
+          </div>
+          <div class="task">
+            <span class="task-icon">○</span>
+            Verbeterd MP3-bestand uploaden naar de Vercel-site
+          </div>
+        </div>
+      </div>
+
+      <div class="phase">
+        <div class="phase-header">
+          <div class="phase-num">5</div>
+          <div class="phase-title">Platform &amp; Publicatie</div>
+          <span class="status-badge todo">Te doen</span>
+        </div>
+        <div class="phase-tasks">
+          <div class="task">
+            <span class="task-icon">○</span>
+            Next.js site bouwen en deployen op Vercel (alpegg.vercel.app)
+          </div>
+          <div class="task">
+            <span class="task-icon">○</span>
+            Media Session API implementeren (werkt op vergrendelscherm)
+          </div>
+          <div class="task">
+            <span class="task-icon">○</span>
+            Audio-opslag inrichten (Google Drive of S3 bucket)
+          </div>
+          <div class="task">
+            <span class="task-icon">○</span>
+            Besloten toegang instellen (niet publiek indexeerbaar, alleen via link)
+          </div>
+          <div class="task">
+            <span class="task-icon">○</span>
+            Link verspreiden in de familie
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- AFLEVERINGEN -->
+  <section>
+    <div class="section-label">De Afleveringen</div>
+    <div class="episodes">
+      <div class="ep-row">
+        <div class="ep-num">0</div>
+        <div class="ep-content">
+          <div class="ep-title">Intro: Wie zijn wij?</div>
+          <div class="ep-desc">Wie de vertellers zijn, waarom we deze podcast maken, en wat de luisteraar staat te wachten.</div>
+        </div>
+        <div class="ep-tag">Intro</div>
+      </div>
+      <div class="ep-row">
+        <div class="ep-num">1</div>
+        <div class="ep-content">
+          <div class="ep-title">Otto Lanz &amp; het ontstaan van Alpegg</div>
+          <div class="ep-desc">Onze overgrootvader 'Gombibi': chirurg, hoogleraar, kunstverzamelaar. Hoe hij een huis op de berg liet bouwen met paarden, hoe het in de familie kwam, en welke rol Alpegg in de oorlog speelde.</div>
+        </div>
+      </div>
+      <div class="ep-row">
+        <div class="ep-num">2</div>
+        <div class="ep-content">
+          <div class="ep-title">Het huis door de tijd</div>
+          <div class="ep-desc">Van geen weg en geen stroom, naar een stenen weg, elektriciteit en later zelfs internet. De verbouwingen van toen, tot aan de boomhut, ontbijttafel en mooie vuurplaats van nu.</div>
+        </div>
+      </div>
+      <div class="ep-row">
+        <div class="ep-num">3</div>
+        <div class="ep-content">
+          <div class="ep-title">Verhalen uit de oude doos</div>
+          <div class="ep-desc">De anekdotes uit onze jeugd en die van onze ouders: de WiHAHA-club, oma met de geitjes, de gebroken voet van Pa, Moel bloot op de wc tijdens het bezoek van prins Frederik.</div>
+        </div>
+      </div>
+      <div class="ep-row">
+        <div class="ep-num">4</div>
+        <div class="ep-content">
+          <div class="ep-title">Het (buiten)leven om Alpegg</div>
+          <div class="ep-desc">Wandelroutes, dorpjes in de buurt, de Thun afzakken. De plekken die we kennen als onze broekzak, met Albertine als gids langs de laatste weg naar boven.</div>
+        </div>
+      </div>
+      <div class="ep-row">
+        <div class="ep-num">5</div>
+        <div class="ep-content">
+          <div class="ep-title">Vrienden van Alpegg</div>
+          <div class="ep-desc">De boeren, Post Peter, de bijzondere gasten en de onwelkome.</div>
+        </div>
+      </div>
+      <div class="ep-row">
+        <div class="ep-num">6</div>
+        <div class="ep-content">
+          <div class="ep-title">Verhalen uit de nieuwe doos</div>
+          <div class="ep-desc">De avonturen van de jongere generatie, verteld door ons. Taco's kirsch-debacle, Cornelis kwijt in het donker, de Flu-acties met cola en rum.</div>
+        </div>
+      </div>
+      <div class="ep-row">
+        <div class="ep-num">7</div>
+        <div class="ep-content">
+          <div class="ep-title">Het ritme van het jaar</div>
+          <div class="ep-desc">Worstjes braden, koespringen, houtsprokkelen, 1 augustus. Wat we eten: pathé, parfe, fondue, en de dieren die het huis omringen.</div>
+        </div>
+      </div>
+      <div class="ep-row">
+        <div class="ep-num">8</div>
+        <div class="ep-content">
+          <div class="ep-title">Beheer in harmonie</div>
+          <div class="ep-desc">Hoe hebben we Alpegg vier generaties lang samen gedragen, en hoe geven we het door? Met een blik van de kinderen op de toekomst.</div>
+        </div>
+      </div>
+      <div class="ep-row">
+        <div class="ep-num">✦</div>
+        <div class="ep-content">
+          <div class="ep-title">Het verhaal van Moelie</div>
+          <div class="ep-desc">Verteld door Albertine.</div>
+        </div>
+        <div class="ep-tag bonus">Bonus</div>
+      </div>
+      <div class="ep-row">
+        <div class="ep-num">✦</div>
+        <div class="ep-content">
+          <div class="ep-title">Zwitserse les</div>
+          <div class="ep-desc">Verteld door Hendrik, Fre en Bibiane.</div>
+        </div>
+        <div class="ep-tag bonus">Bonus</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VASTE STRUCTUUR -->
+  <section>
+    <div class="section-label">Vaste Structuur per Aflevering</div>
+    <div class="structuur-list">
+      <div class="struct-row">
+        <div class="struct-n">1</div>
+        <div>
+          <div class="struct-title">Vaste intro</div>
+          <div class="struct-note">Ingesproken door alle kinderen</div>
+        </div>
+      </div>
+      <div class="struct-row">
+        <div class="struct-n">2</div>
+        <div>
+          <div class="struct-title">Raad het verhaal: de vraag</div>
+          <div class="struct-note">Een verhaalvraag voor alle luisteraars · ingesproken door alle kinderen</div>
+        </div>
+      </div>
+      <div class="struct-row">
+        <div class="struct-n">3</div>
+        <div>
+          <div class="struct-title">Topic van de dag</div>
+          <div class="struct-note">Het kerngesprek met de vier vertellers</div>
+        </div>
+      </div>
+      <div class="struct-row">
+        <div class="struct-n">4</div>
+        <div>
+          <div class="struct-title">De vraag van Otto</div>
+          <div class="struct-note">Een filosofische vraag · ingesproken door alle kinderen</div>
+        </div>
+      </div>
+      <div class="struct-row">
+        <div class="struct-n">5</div>
+        <div>
+          <div class="struct-title">Raad het verhaal: het antwoord</div>
+        </div>
+      </div>
+      <div class="struct-row">
+        <div class="struct-n">6</div>
+        <div>
+          <div class="struct-title">Vaste afsluiting</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROLLEN -->
+  <section>
+    <div class="section-label">Rollen &amp; Verwachting</div>
+    <div class="rollen-grid">
+      <div class="rol-card">
+        <div class="rol-label">De vier vertellers</div>
+        <div class="rol-name">Albertine, Hendrik, Bibianne &amp; Frederik</div>
+        <div class="rol-desc">Één opnamedag samen, met een reservedag in de achterzak.</div>
+      </div>
+      <div class="rol-card">
+        <div class="rol-label">De hosts</div>
+        <div class="rol-name">Twee tot vier kinderen</div>
+        <div class="rol-desc">Roulerend per aflevering. Vragen stellen, doorvragen, eigen herinneringen mogen in.</div>
+      </div>
+      <div class="rol-card">
+        <div class="rol-label">Productie &amp; Techniek</div>
+        <div class="rol-name">Philip</div>
+        <div class="rol-desc">Verzorgt opname, input van de kinderen, montage en editing.</div>
+      </div>
+      <div class="rol-card">
+        <div class="rol-label">De hele familie</div>
+        <div class="rol-name">Iedereen, van klein tot groot</div>
+        <div class="rol-desc">Spreekt in eigen tijd openingszinnen, raadsels en filosofische antwoorden in. Vanuit huis bijgedragen.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH -->
+  <section>
+    <div class="section-label">Technisch Overzicht</div>
+    <div class="tech-grid">
+      <div class="tech-card">
+        <div class="tech-step">Stap 1 — Opnemen</div>
+        <div class="tech-title">Zoom H6 / H8</div>
+        <div class="tech-detail">Handheld recorder + microfoons huren. Akoestiek chalet dempen met kussens en gordijnen.</div>
+      </div>
+      <div class="tech-card">
+        <div class="tech-step">Stap 2 — Bewerken</div>
+        <div class="tech-title">GarageBand (gratis)</div>
+        <div class="tech-detail">10-track template — één keer bouwen, elke aflevering hergebruiken. Werkt op Mac 2016+.</div>
+      </div>
+      <div class="tech-card">
+        <div class="tech-step">Stap 3 — Mastering</div>
+        <div class="tech-title">Auphonic</div>
+        <div class="tech-detail">Exporteer als MP3, upload naar <a href="https://auphonic.com" target="_blank">auphonic.com</a>. Ruisverwijdering + volumes gelijktrekken. Gratis: 2 uur/maand.</div>
+      </div>
+      <div class="tech-card">
+        <div class="tech-step">Stap 4 — Publiceren</div>
+        <div class="tech-title">Vercel (Next.js)</div>
+        <div class="tech-detail">alpegg.vercel.app — besloten, niet indexeerbaar. Media Session API voor gebruik op vergrendelscherm.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KOSTEN -->
+  <section>
+    <div class="section-label">Kostenoverzicht</div>
+    <table class="kosten-table">
+      <thead>
+        <tr><th>Onderdeel</th><th>Kosten</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>GarageBand</td><td>Gratis (al op Mac)</td></tr>
+        <tr><td>Royalty-vrije muziek</td><td>Gratis</td></tr>
+        <tr><td>Vercel hosting</td><td>Gratis</td></tr>
+        <tr><td>Auphonic credits (~15 uur materiaal)</td><td>~€18–20</td></tr>
+        <tr><td>Domeinnaam (optioneel)</td><td>€10–15 / jaar</td></tr>
+        <tr class="total"><td>Totaal eenmalig</td><td>~€20</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+</main>
+
+<footer>
+  Alpegg · Een familiepodcast · Besloten voor de familie
+</footer>
+
+</body>
+</html>
