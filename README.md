@@ -6,7 +6,7 @@ Een besloten familiepodcast voor de huidige en toekomstige generaties. Tijdcapsu
 
 ## Projectpagina
 
-Open `index.html` lokaal, of deploy via GitHub Pages.
+Open `index.html` lokaal (of `npx serve`). De pagina staat bewust niet online — het luisterplatform voor de familie komt later als eigen, besloten Next.js-site op Vercel (zie ROADMAP.md).
 
 ## Inhoud
 
