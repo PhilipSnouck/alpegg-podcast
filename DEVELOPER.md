@@ -8,7 +8,7 @@ Technical context for a developer or LLM working on this codebase.
 
 - **GitHub:** https://github.com/PhilipSnouck/podcast-alpegg
 - **Live:** not live (per ROADMAP.md)
-- **Local:** `C:\Users\p.snouckaert\Own AI projects\podcast-alpegg`
+- **Local:** `C:\Users\p.snouckaert\Personal repos\podcast-alpegg`
 - **Deploy:** none, by choice — the project page is local-only. The listening platform
   will be built later as a private Next.js site on Vercel (see ROADMAP.md "Platform
   bouwen op Vercel"). An old "deploy via GitHub Pages" idea in the README has been

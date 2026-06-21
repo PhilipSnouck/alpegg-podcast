@@ -5,7 +5,7 @@ Philip verzorgt opname, montage en editing. Platform in Next.js op Vercel.
 
 - **Live:** niet live
 - **GitHub:** https://github.com/PhilipSnouck/podcast-alpegg
-- **Local:** `C:\Users\p.snouckaert\Own AI projects\podcast-alpegg`
+- **Local:** `C:\Users\p.snouckaert\Personal repos\podcast-alpegg`
 
 ---
 

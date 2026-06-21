@@ -11,5 +11,5 @@ happens outside the repo.
 - README.md = usage/explanations
 - DEVELOPER.md = architecture
 - ROADMAP.md = task list (format spec:
-  `C:\Users\p.snouckaert\Own AI projects\roadmap-dashboard\ROADMAP_TEMPLATE.md`
+  `C:\Users\p.snouckaert\Personal repos\roadmap-dashboard\ROADMAP_TEMPLATE.md`
   — read before editing)
