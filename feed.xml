@@ -1,6 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+=======================================================
+  ALPEGG PODCAST — FEED
+=======================================================
+
+  NIEUWE AFLEVERING TOEVOEGEN:
+  1. Kopieer het blok tussen <item> en </item> hieronder
+  2. Plak het BOVEN de vorige aflevering (nieuwste bovenaan)
+  3. Pas deze 4 dingen aan:
+       - <title>        naam van de aflevering
+       - id=            het Drive file ID van de MP3
+       - <guid>         uniek nummer (gewoon ophogen: ep-002, ep-003...)
+       - <pubDate>      datum van publicatie
+
+  DRIVE FILE ID VINDEN:
+  Rechtsklik op het bestand in Drive → Delen → Link kopiëren
+  De link ziet er zo uit:
+  https://drive.google.com/file/d/  [DIT IS HET ID]  /view
+=======================================================
+-->
+
 <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
   <channel>
+
+    <!-- Podcastnaam en beschrijving — hoeft niet vaak aangepast te worden -->
     <title>Alpegg</title>
     <description>We nemen jullie mee door de geschiedenis van het huis Alpegg. Van het ontstaan tot alle spannende verhalen door de generaties heen.</description>
     <language>nl</language>
@@ -12,10 +36,14 @@
       <link>https://raw.githubusercontent.com/PhilipSnouck/alpegg-podcast/master/feed.xml</link>
     </image>
 
+    <!-- ===================== AFLEVERINGEN ===================== -->
+    <!-- Nieuwste aflevering altijd bovenaan                      -->
+
+    <!-- AFLEVERING 1 -->
     <item>
       <title>Aflevering 1 — Test</title>
       <description>Eerste testepisode</description>
-      <enclosure url="https://drive.google.com/uc?export=download&amp;id=12UAlgRFpVpSiBSQQB4dX0RGhhem8E8Xz" length="1" type="audio/wav"/>
+      <enclosure url="https://drive.google.com/uc?export=download&amp;id=12UAlgRFpVpSiBSQQB4dX0RGhhem8E8Xz" length="1" type="audio/mpeg"/>
       <guid>alpegg-ep-001</guid>
       <pubDate>Thu, 16 Jul 2026 12:00:00 +0000</pubDate>
     </item>
