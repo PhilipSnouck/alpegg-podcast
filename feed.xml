@@ -38,16 +38,16 @@
 
     <!-- ===================== AFLEVERINGEN ===================== -->
 
-        <!-- AFLEVERING 0 -->
+    <!-- AFLEVERING 0 -->
     <item>
       <title>0. De introductie</title>
       <description>Introductie van de sprekers en de podcast</description>
       <enclosure url="https://drive.google.com/uc?export=download&amp;id=12UAlgRFpVpSiBSQQB4dX0RGhhem8E8Xz" length="1" type="audio/mpeg"/>
-      <guid>alpegg-ep-001</guid>
+      <guid>alpegg-ep-000</guid>
       <pubDate>Thu, 1 Jul 2026 12:00:00 +0000</pubDate>
     </item>
 
-            <!-- AFLEVERING 1 -->
+    <!-- AFLEVERING 1 -->
     <item>
       <title>1. Otto Lanz en het ontstaan van Alpegg</title>
       <description>Onze overgrootvader 'Gombibi': chirurg, hoogleraar, kunstverzamelaar. Hoe hij een huis op de berg liet bouwen met paarden, hoe het in de familie kwam.</description>
@@ -56,96 +56,95 @@
       <pubDate>Thu, 2 Jul 2026 12:00:00 +0000</pubDate>
     </item>
 
-            <!-- AFLEVERING 2 -->
+    <!-- AFLEVERING 2 -->
     <item>
       <title>2. Het huis door de tijd</title>
       <description>Van geen weg en geen stroom, naar een stenen weg, elektriciteit en later zelfs internet. De verbouwingen van toen, tot aan de boomhut, ontbijttafel en mooie vuurplaats van nu.</description>
       <enclosure url="https://drive.google.com/uc?export=download&amp;id=12UAlgRFpVpSiBSQQB4dX0RGhhem8E8Xz" length="1" type="audio/mpeg"/>
-      <guid>alpegg-ep-001</guid>
+      <guid>alpegg-ep-002</guid>
       <pubDate>Thu, 3 Jul 2026 12:00:00 +0000</pubDate>
     </item>
 
-            <!-- AFLEVERING 3 -->
+    <!-- AFLEVERING 3 -->
     <item>
       <title>3. Verhalen uit de oude doos</title>
       <description>De anekdotes uit onze jeugd en die van onze ouders: de WiHAHA-club, oma met de geitjes, de gebroken voet van Pa, Moel bloot op de wc tijdens het bezoek van prins Frederik.</description>
       <enclosure url="https://drive.google.com/uc?export=download&amp;id=12UAlgRFpVpSiBSQQB4dX0RGhhem8E8Xz" length="1" type="audio/mpeg"/>
-      <guid>alpegg-ep-001</guid>
+      <guid>alpegg-ep-003</guid>
       <pubDate>Thu, 4 Jul 2026 12:00:00 +0000</pubDate>
     </item>
 
-            <!-- AFLEVERING 4 -->
+    <!-- AFLEVERING 4 -->
     <item>
       <title>4. Het (buiten)leven om Alpegg</title>
       <description>Wandelroutes, dorpjes in de buurt, de Thun afzakken. De plekken die we kennen als onze broekzak, met Albertine als gids langs de laatste weg naar boven.</description>
       <enclosure url="https://drive.google.com/uc?export=download&amp;id=12UAlgRFpVpSiBSQQB4dX0RGhhem8E8Xz" length="1" type="audio/mpeg"/>
-      <guid>alpegg-ep-001</guid>
+      <guid>alpegg-ep-004</guid>
       <pubDate>Thu, 5 Jul 2026 12:00:00 +0000</pubDate>
     </item>
 
-            <!-- AFLEVERING 5 -->
+    <!-- AFLEVERING 5 -->
     <item>
       <title>5. Vrienden van Alpegg</title>
       <description>De boeren, Post Peter, de bijzondere gasten en de onwelkome.</description>
       <enclosure url="https://drive.google.com/uc?export=download&amp;id=12UAlgRFpVpSiBSQQB4dX0RGhhem8E8Xz" length="1" type="audio/mpeg"/>
-      <guid>alpegg-ep-001</guid>
+      <guid>alpegg-ep-005</guid>
       <pubDate>Thu, 6 Jul 2026 12:00:00 +0000</pubDate>
     </item>
 
-            <!-- AFLEVERING 6 -->
+    <!-- AFLEVERING 6 -->
     <item>
       <title>6. Verhalen uit de nieuwe doos</title>
       <description>De avonturen van de jongere generatie, verteld door ons. Taco's kirsch-debacle, Cornelis kwijt in het donker, de Fluacties met cola en rum.</description>
       <enclosure url="https://drive.google.com/uc?export=download&amp;id=12UAlgRFpVpSiBSQQB4dX0RGhhem8E8Xz" length="1" type="audio/mpeg"/>
-      <guid>alpegg-ep-001</guid>
+      <guid>alpegg-ep-006</guid>
       <pubDate>Thu, 7 Jul 2026 12:00:00 +0000</pubDate>
     </item>
 
-            <!-- AFLEVERING 7 -->
+    <!-- AFLEVERING 7 -->
     <item>
       <title>7. XXXXX</title>
       <description>xxxxx</description>
       <enclosure url="https://drive.google.com/uc?export=download&amp;id=12UAlgRFpVpSiBSQQB4dX0RGhhem8E8Xz" length="1" type="audio/mpeg"/>
-      <guid>alpegg-ep-001</guid>
+      <guid>alpegg-ep-007</guid>
       <pubDate>Thu, 8 Jul 2026 12:00:00 +0000</pubDate>
     </item>
 
-                <!-- AFLEVERING 8 -->
+    <!-- AFLEVERING 8 -->
     <item>
-      <title>8. Beheer in harmonie. De introductie</title>
+      <title>8. Beheer in harmonie</title>
       <description>Hoe hebben we Alpegg vier generaties lang samen gedragen, en hoe geven we het door? Met een blik van de kinderen op de toekomst.</description>
       <enclosure url="https://drive.google.com/uc?export=download&amp;id=12UAlgRFpVpSiBSQQB4dX0RGhhem8E8Xz" length="1" type="audio/mpeg"/>
-      <guid>alpegg-ep-001</guid>
+      <guid>alpegg-ep-008</guid>
       <pubDate>Thu, 9 Jul 2026 12:00:00 +0000</pubDate>
     </item>
 
-                <!-- AFLEVERING bonus 1 -->
+    <!-- BONUS 1 -->
     <item>
       <title>Bonus: Schwyzerdütsch les</title>
       <description>Wat moet je weten om je de weg wijs te maken met de locals in Eriz.</description>
       <enclosure url="https://drive.google.com/uc?export=download&amp;id=12UAlgRFpVpSiBSQQB4dX0RGhhem8E8Xz" length="1" type="audio/mpeg"/>
-      <guid>alpegg-ep-001</guid>
+      <guid>alpegg-bonus-001</guid>
       <pubDate>Thu, 10 Jul 2026 12:00:00 +0000</pubDate>
     </item>
 
-                <!-- AFLEVERING bonus 2 -->
+    <!-- BONUS 2 -->
     <item>
       <title>Bonus: XX</title>
       <description>Bonus XX</description>
       <enclosure url="https://drive.google.com/uc?export=download&amp;id=12UAlgRFpVpSiBSQQB4dX0RGhhem8E8Xz" length="1" type="audio/mpeg"/>
-      <guid>alpegg-ep-001</guid>
+      <guid>alpegg-bonus-002</guid>
       <pubDate>Thu, 11 Jul 2026 12:00:00 +0000</pubDate>
     </item>
 
-                <!-- AFLEVERING bonus 3 -->
+    <!-- BONUS 3 -->
     <item>
       <title>Bonus XXX</title>
       <description>Bonus XXX</description>
       <enclosure url="https://drive.google.com/uc?export=download&amp;id=12UAlgRFpVpSiBSQQB4dX0RGhhem8E8Xz" length="1" type="audio/mpeg"/>
-      <guid>alpegg-ep-001</guid>
+      <guid>alpegg-bonus-003</guid>
       <pubDate>Thu, 12 Jul 2026 12:00:00 +0000</pubDate>
     </item>
-
 
   </channel>
 </rss>
