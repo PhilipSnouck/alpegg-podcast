@@ -25,10 +25,10 @@
   <channel>
 
     <!-- Podcastnaam en beschrijving — hoeft niet vaak aangepast te worden -->
-    <title>Alpegg</title>
-    <description>We nemen jullie mee door de geschiedenis van het huis Alpegg. Van het ontstaan tot alle spannende verhalen door de generaties heen.</description>
+    <title>De verhalen van Alpegg</title>
+    <description>We nemen jullie mee door de geschiedenis van het huis Alpegg. Van het ontstaan door Otto Lanz tot alle spannende verhalen door de generaties heen.</description>
     <language>nl</language>
-    <itunes:author>Liefhebbers van Alpegg</itunes:author>
+    <itunes:author>Zij die Alpegg liefhebben</itunes:author>
     <itunes:image href="https://raw.githubusercontent.com/PhilipSnouck/alpegg-podcast/master/cover_image.jpeg"/>
     <image>
       <url>https://raw.githubusercontent.com/PhilipSnouck/alpegg-podcast/master/cover_image.jpeg</url>
