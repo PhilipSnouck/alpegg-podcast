@@ -2,9 +2,15 @@
 <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
   <channel>
     <title>Alpegg</title>
-    <description>Familiepodcast over het chalet in Zwitserland</description>
+    <description>We nemen jullie mee door de geschiedenis van het huis Alpegg. Van het ontstaan tot alle spannende verhalen door de generaties heen.</description>
     <language>nl</language>
     <itunes:author>Familie Alpegg</itunes:author>
+    <itunes:image href="https://raw.githubusercontent.com/PhilipSnouck/alpegg-podcast/master/cover_image.jpeg"/>
+    <image>
+      <url>https://raw.githubusercontent.com/PhilipSnouck/alpegg-podcast/master/cover_image.jpeg</url>
+      <title>Alpegg</title>
+      <link>https://raw.githubusercontent.com/PhilipSnouck/alpegg-podcast/master/feed.xml</link>
+    </image>
 
     <item>
       <title>Aflevering 1 — Test</title>
