@@ -1,1 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+  <channel>
+    <title>Alpegg</title>
+    <description>Familiepodcast over het chalet in Zwitserland</description>
+    <language>nl</language>
+    <itunes:author>Familie Alpegg</itunes:author>
 
+    <item>
+      <title>Aflevering 1 — Test</title>
+      <description>Eerste testepisode</description>
+      <enclosure url="https://drive.google.com/uc?export=download&amp;id=12UAlgRFpVpSiBSQQB4dX0RGhhem8E8Xz" length="1" type="audio/wav"/>
+      <guid>alpegg-ep-001</guid>
+      <pubDate>Thu, 16 Jul 2026 12:00:00 +0000</pubDate>
+    </item>
+
+  </channel>
+</rss>
