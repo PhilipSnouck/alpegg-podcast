@@ -65,9 +65,18 @@
       <pubDate>Thu, 3 Jul 2026 12:00:00 +0000</pubDate>
     </item>
 
-    <!-- AFLEVERING 3 -->
+    <!-- AFLEVERING 3a -->
     <item>
-      <title>3. Verhalen uit de oude doos</title>
+      <title>3a. Verhalen uit de oude doos - deel 1</title>
+      <description>De anekdotes uit onze jeugd en die van onze ouders: de WiHAHA-club, oma met de geitjes, de gebroken voet van Pa, Moel bloot op de wc tijdens het bezoek van prins Frederik.</description>
+      <enclosure url="https://drive.google.com/uc?export=download&amp;id=12UAlgRFpVpSiBSQQB4dX0RGhhem8E8Xz" length="1" type="audio/mpeg"/>
+      <guid>alpegg-ep-003</guid>
+      <pubDate>Thu, 4 Jul 2026 12:00:00 +0000</pubDate>
+    </item>
+
+        <!-- AFLEVERING 3b -->
+    <item>
+      <title>3b. Verhalen uit de oude doos - deel 2</title>
       <description>De anekdotes uit onze jeugd en die van onze ouders: de WiHAHA-club, oma met de geitjes, de gebroken voet van Pa, Moel bloot op de wc tijdens het bezoek van prins Frederik.</description>
       <enclosure url="https://drive.google.com/uc?export=download&amp;id=12UAlgRFpVpSiBSQQB4dX0RGhhem8E8Xz" length="1" type="audio/mpeg"/>
       <guid>alpegg-ep-003</guid>
@@ -85,8 +94,8 @@
 
     <!-- AFLEVERING 5 -->
     <item>
-      <title>5. Vrienden van Alpegg</title>
-      <description>De boeren, Post Peter, de bijzondere gasten en de onwelkome.</description>
+      <title>5. Schwyzerdütsch les</title>
+      <description>Wat moet je weten om je de weg wijs te maken met de locals in Eriz.</description>
       <enclosure url="https://drive.google.com/uc?export=download&amp;id=12UAlgRFpVpSiBSQQB4dX0RGhhem8E8Xz" length="1" type="audio/mpeg"/>
       <guid>alpegg-ep-005</guid>
       <pubDate>Thu, 6 Jul 2026 12:00:00 +0000</pubDate>
@@ -94,8 +103,8 @@
 
     <!-- AFLEVERING 6 -->
     <item>
-      <title>6. Verhalen uit de nieuwe doos</title>
-      <description>De avonturen van de jongere generatie, verteld door ons. Taco's kirsch-debacle, Cornelis kwijt in het donker, de Fluacties met cola en rum.</description>
+      <title>6. Alle vorige eigenaren</title>
+      <description>Wie ons allemaal voor gingen in Alpegg.</description>
       <enclosure url="https://drive.google.com/uc?export=download&amp;id=12UAlgRFpVpSiBSQQB4dX0RGhhem8E8Xz" length="1" type="audio/mpeg"/>
       <guid>alpegg-ep-006</guid>
       <pubDate>Thu, 7 Jul 2026 12:00:00 +0000</pubDate>
@@ -103,26 +112,17 @@
 
     <!-- AFLEVERING 7 -->
     <item>
-      <title>7. XXXXX</title>
-      <description>xxxxx</description>
+      <title>7. Beheer in harmonie</title>
+      <description>Hoe hebben we Alpegg vier generaties lang samen gedragen, en hoe geven we het door? Met een blik van de kinderen op de toekomst.</description>
       <enclosure url="https://drive.google.com/uc?export=download&amp;id=12UAlgRFpVpSiBSQQB4dX0RGhhem8E8Xz" length="1" type="audio/mpeg"/>
       <guid>alpegg-ep-007</guid>
       <pubDate>Thu, 8 Jul 2026 12:00:00 +0000</pubDate>
     </item>
 
-    <!-- AFLEVERING 8 -->
-    <item>
-      <title>8. Beheer in harmonie</title>
-      <description>Hoe hebben we Alpegg vier generaties lang samen gedragen, en hoe geven we het door? Met een blik van de kinderen op de toekomst.</description>
-      <enclosure url="https://drive.google.com/uc?export=download&amp;id=12UAlgRFpVpSiBSQQB4dX0RGhhem8E8Xz" length="1" type="audio/mpeg"/>
-      <guid>alpegg-ep-008</guid>
-      <pubDate>Thu, 9 Jul 2026 12:00:00 +0000</pubDate>
-    </item>
-
     <!-- BONUS 1 -->
     <item>
-      <title>Bonus: Schwyzerdütsch les</title>
-      <description>Wat moet je weten om je de weg wijs te maken met de locals in Eriz.</description>
+      <title>Bonus 1: Alpegg in de winter.</title>
+      <description>Alpegg is meer dan enkel een zomerhuis. Hoe trotseer je de winter in Alpegg?</description>
       <enclosure url="https://drive.google.com/uc?export=download&amp;id=12UAlgRFpVpSiBSQQB4dX0RGhhem8E8Xz" length="1" type="audio/mpeg"/>
       <guid>alpegg-bonus-001</guid>
       <pubDate>Thu, 10 Jul 2026 12:00:00 +0000</pubDate>
@@ -130,8 +130,8 @@
 
     <!-- BONUS 2 -->
     <item>
-      <title>Bonus: XX</title>
-      <description>Bonus XX</description>
+      <title>Bonus2: Verhalen uit de nieuwe doos.</title>
+      <description>De herinneringen en avonturen van de 5de generatie.</description>
       <enclosure url="https://drive.google.com/uc?export=download&amp;id=12UAlgRFpVpSiBSQQB4dX0RGhhem8E8Xz" length="1" type="audio/mpeg"/>
       <guid>alpegg-bonus-002</guid>
       <pubDate>Thu, 11 Jul 2026 12:00:00 +0000</pubDate>
@@ -139,8 +139,8 @@
 
     <!-- BONUS 3 -->
     <item>
-      <title>✅ REFRESH WERKT - Bonus XXX</title>
-      <description>Bonus XXX</description>
+      <title>Bonus 3: - Murmeltiere, Walter en het sprookje van Muhl</title>
+      <description>Bibiane en Hendrik nemen ons mee in de verhalen die hun vroeger verteld werden</description>
       <enclosure url="https://drive.google.com/uc?export=download&amp;id=12UAlgRFpVpSiBSQQB4dX0RGhhem8E8Xz" length="1" type="audio/mpeg"/>
       <guid>alpegg-bonus-003</guid>
       <pubDate>Thu, 12 Jul 2026 12:00:00 +0000</pubDate>
