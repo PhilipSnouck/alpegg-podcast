@@ -66,39 +66,62 @@
       font-style: italic;
       color: var(--text-muted);
       font-size: 1rem;
-      margin-bottom: 34px;
+      margin-bottom: 30px;
+    }
+
+    .steps-label {
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 14px;
     }
 
     .btn {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 8px;
+      justify-content: space-between;
+      gap: 10px;
       width: 100%;
-      padding: 17px 20px;
+      padding: 16px 20px;
       margin-bottom: 12px;
+      border: none;
       border-radius: 12px;
       background: var(--accent-dk);
       color: var(--warm-white);
-      font-size: 1.02rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
       font-weight: 500;
       text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(60, 46, 34, 0.22);
       transition: transform 0.08s ease;
     }
     .btn:active { transform: scale(0.98); }
-    .btn .sub { font-weight: 300; opacity: 0.82; font-size: 0.82rem; }
+    .btn .arrow { font-size: 1.15rem; opacity: 0.85; }
+    .btn.copied { background: #4e7d55; }
 
-    .steps-label {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      margin-bottom: 12px;
-    }
     .note {
-      font-size: 0.84rem;
-      color: var(--text-muted);
+      font-size: 0.9rem;
+      color: var(--text);
       margin-top: 12px;
       text-align: left;
       line-height: 1.55;
+    }
+    .note strong { font-weight: 600; }
+    .note.muted { color: var(--text-muted); font-size: 0.84rem; }
+
+    .feedline {
+      margin-top: 10px;
+      padding: 10px 12px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--warm-white);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-align: left;
+      word-break: break-all;
+      line-height: 1.5;
+      user-select: all;
     }
 
     .hidden { display: none; }
@@ -114,38 +137,72 @@
     <h1>Alpegg</h1>
     <p class="tagline">Opdat de bijzondere verhalen van Alpegg blijven leven, voor het nageslacht.</p>
 
-    <a class="btn" id="apple" href="podcast://raw.githubusercontent.com/PhilipSnouck/alpegg-podcast/master/feed.xml">
-      <span>iPhone</span><span class="sub">&middot; Apple Podcasts</span>
-    </a>
+    <!-- iPhone -->
+    <div id="apple-wrap">
+      <p class="steps-label">iPhone (Apple Podcasts)</p>
+      <button class="btn" id="copybtn">
+        <span>1. Kopieer de luister-link</span><span class="arrow">&#128203;</span>
+      </button>
+      <p class="note">2. Open de app <strong>Podcasts</strong> en tik onderin op <strong>Bibliotheek</strong>.</p>
+      <p class="note">3. Tik rechtsboven op <strong>&hellip;</strong> en kies <strong>Voeg programma toe via URL</strong>. Plak de link en tik op <strong>Volgen</strong>.</p>
+      <p class="note muted">Daarna vind je de afleveringen onder <strong>Bibliotheek</strong>. Tik een aflevering aan om te luisteren, of download die om offline te luisteren.</p>
+      <div class="feedline" id="feedline">https://raw.githubusercontent.com/PhilipSnouck/alpegg-podcast/master/feed.xml</div>
+    </div>
 
+    <!-- Android -->
     <div id="android-wrap">
-      <p class="steps-label">Android &middot; in 3 stappen</p>
+      <p class="steps-label">Android (AntennaPod)</p>
       <a class="btn" href="https://play.google.com/store/apps/details?id=de.danoeh.antennapod">
-        <span>1. Installeer AntennaPod</span>
+        <span>1. Installeer AntennaPod</span><span class="arrow">&rarr;</span>
       </a>
       <a class="btn" id="android" href="https://antennapod.org/deeplink/subscribe/?url=https%3A%2F%2Fraw.githubusercontent.com%2FPhilipSnouck%2Falpegg-podcast%2Fmaster%2Ffeed.xml&amp;title=De+verhalen+van+Alpegg">
-        <span>2. Abonneer op de podcast</span>
+        <span>2. Abonneer op de podcast</span><span class="arrow">&rarr;</span>
       </a>
-      <p class="note">Tik stap 2 pas nadat AntennaPod is geïnstalleerd, en klik daarna in de app op &ldquo;Subscribe&rdquo;.</p>
-      <p class="note">3. Open onderin de app &ldquo;Subscriptions&rdquo;. Daar staan de afleveringen op volgorde. Tik een aflevering aan om te luisteren, of download &lsquo;m om offline te luisteren.</p>
+      <p class="note">Tik knop 2 pas nadat AntennaPod is geïnstalleerd, en klik daarna in de app op <strong>Subscribe</strong>.</p>
+      <p class="note muted">3. Open onderin de app <strong>Subscriptions</strong>. Daar staan de afleveringen op volgorde. Tik een aflevering aan om te luisteren, of download die om offline te luisteren.</p>
     </div>
 
     <footer>Besloten familiepodcast</footer>
   </main>
 
   <script>
+    var FEED = "https://raw.githubusercontent.com/PhilipSnouck/alpegg-podcast/master/feed.xml";
+
+    // Kopieer-knop (iPhone)
+    var copyBtn = document.getElementById("copybtn");
+    if (copyBtn) {
+      copyBtn.addEventListener("click", function () {
+        var label = copyBtn.querySelector("span");
+        var done = function () {
+          copyBtn.classList.add("copied");
+          label.textContent = "Gekopieerd! Ga nu naar stap 2";
+          setTimeout(function () {
+            copyBtn.classList.remove("copied");
+            label.textContent = "1. Kopieer de luister-link";
+          }, 2600);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(FEED).then(done, done);
+        } else {
+          var r = document.createRange();
+          r.selectNode(document.getElementById("feedline"));
+          var s = window.getSelection();
+          s.removeAllRanges(); s.addRange(r);
+          try { document.execCommand("copy"); } catch (e) {}
+          s.removeAllRanges();
+          done();
+        }
+      });
+    }
+
+    // Toon per toestel alleen wat relevant is; op desktop allebei.
     var ua = navigator.userAgent || "";
     var isIOS = /iPhone|iPad|iPod/i.test(ua) || (/Mac/i.test(ua) && "ontouchend" in document);
     var isAndroid = /Android/i.test(ua);
-
-    var apple = document.getElementById("apple");
-    var androidWrap = document.getElementById("android-wrap");
-
-    // Toon per toestel alleen wat relevant is; op desktop allebei.
     if (isIOS) {
-      androidWrap.classList.add("hidden");
+      document.getElementById("android-wrap").classList.add("hidden");
     } else if (isAndroid) {
-      apple.classList.add("hidden");
+      document.getElementById("apple-wrap").classList.add("hidden");
     }
   </script>
 </body>
