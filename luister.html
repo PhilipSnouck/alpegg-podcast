@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alpegg - Luister mee</title>
+  <meta name="description" content="Abonneer je op de Alpegg familiepodcast." />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+    :root {
+      --cream:      #f5f0e8;
+      --warm-white: #faf7f2;
+      --accent:     #7c6248;
+      --accent-dk:  #5c4a32;
+      --text:       #3a2e22;
+      --text-muted: #7a6a58;
+      --border:     #d4c9b8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--cream);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-weight: 300;
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      padding: 32px 16px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 440px;
+      text-align: center;
+    }
+
+    .cover {
+      width: 220px;
+      height: 220px;
+      max-width: 72vw;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      box-shadow: 0 12px 30px rgba(60, 46, 34, 0.18);
+      margin: 0 auto 26px;
+      display: block;
+    }
+
+    .eyebrow {
+      font-size: 0.66rem;
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 400;
+      font-size: 3rem;
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+
+    .tagline {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: var(--text-muted);
+      font-size: 1rem;
+      margin-bottom: 34px;
+    }
+
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 16px 20px;
+      margin-bottom: 14px;
+      border: none;
+      border-radius: 12px;
+      background: var(--accent-dk);
+      color: var(--warm-white);
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      text-decoration: none;
+      cursor: pointer;
+      transition: transform 0.08s ease, background 0.15s ease;
+    }
+    .btn:active { transform: scale(0.98); }
+    .btn .sub { font-weight: 300; opacity: 0.8; font-size: 0.82rem; }
+    .btn.secondary { background: var(--warm-white); color: var(--accent-dk); border: 1px solid var(--border); }
+
+    .divider {
+      margin: 26px 0 18px;
+      font-size: 0.72rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-muted);
+    }
+
+    .feed-label {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .feed-box {
+      display: flex;
+      gap: 8px;
+      align-items: stretch;
+    }
+    .feed-url {
+      flex: 1;
+      padding: 11px 12px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--warm-white);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      text-align: left;
+      line-height: 1.5;
+    }
+    .copy-btn {
+      padding: 0 16px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--warm-white);
+      color: var(--accent-dk);
+      font-weight: 500;
+      font-size: 0.82rem;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .copy-btn.done { background: var(--accent-dk); color: var(--warm-white); border-color: var(--accent-dk); }
+
+    .hint {
+      margin-top: 22px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    footer {
+      margin-top: 34px;
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <img class="cover" src="./cover_image.jpeg" alt="Alpegg podcast omslag" />
+
+    <p class="eyebrow">Familiepodcast</p>
+    <h1>Alpegg</h1>
+    <p class="tagline">Opdat de bijzondere verhalen van Alpegg blijven leven, voor het nageslacht.</p>
+
+    <a class="btn" id="apple" href="podcast://raw.githubusercontent.com/PhilipSnouck/alpegg-podcast/master/feed.xml">
+      <span>iPhone</span><span class="sub">&middot; Apple Podcasts</span>
+    </a>
+
+    <a class="btn secondary" id="android" href="https://play.google.com/store/apps/details?id=de.danoeh.antennapod">
+      <span>Android</span><span class="sub">&middot; AntennaPod</span>
+    </a>
+
+    <div class="divider">of handmatig toevoegen</div>
+
+    <p class="feed-label">RSS-feed (plak in je podcast-app):</p>
+    <div class="feed-box">
+      <div class="feed-url" id="feed">https://raw.githubusercontent.com/PhilipSnouck/alpegg-podcast/master/feed.xml</div>
+      <button class="copy-btn" id="copy">Kopieer</button>
+    </div>
+
+    <p class="hint" id="hint"></p>
+
+    <footer>Besloten familiepodcast</footer>
+  </main>
+
+  <script>
+    var FEED = "https://raw.githubusercontent.com/PhilipSnouck/alpegg-podcast/master/feed.xml";
+
+    // Kopieer-knop
+    var copyBtn = document.getElementById("copy");
+    copyBtn.addEventListener("click", function () {
+      var done = function () {
+        copyBtn.textContent = "Gekopieerd";
+        copyBtn.classList.add("done");
+        setTimeout(function () { copyBtn.textContent = "Kopieer"; copyBtn.classList.remove("done"); }, 1800);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(FEED).then(done, done);
+      } else {
+        var r = document.createRange();
+        r.selectNode(document.getElementById("feed"));
+        var s = window.getSelection();
+        s.removeAllRanges(); s.addRange(r);
+        try { document.execCommand("copy"); } catch (e) {}
+        s.removeAllRanges();
+        done();
+      }
+    });
+
+    // Platform-hint: zet de meest relevante knop bovenaan
+    var ua = navigator.userAgent || "";
+    var isIOS = /iPhone|iPad|iPod/i.test(ua);
+    var isAndroid = /Android/i.test(ua);
+    var hint = document.getElementById("hint");
+    var apple = document.getElementById("apple");
+    var android = document.getElementById("android");
+
+    if (isAndroid) {
+      apple.parentNode.insertBefore(android, apple);
+      android.classList.remove("secondary");
+      apple.classList.add("secondary");
+      hint.textContent = "Android: installeer AntennaPod, kopieer dan de RSS-feed hierboven en voeg hem toe via Add Podcast.";
+    } else if (isIOS) {
+      hint.textContent = "iPhone: tik op de Apple Podcasts-knop. Opent de knop niet? Kopieer de feed en voeg hem toe via Bibliotheek, de drie puntjes, Voeg programma toe via URL.";
+    } else {
+      hint.textContent = "Kies je app, of kopieer de RSS-feed en voeg hem handmatig toe.";
+    }
+  </script>
+</body>
+</html>
