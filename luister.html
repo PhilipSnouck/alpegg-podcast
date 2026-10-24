@@ -90,12 +90,17 @@
     .btn:active { transform: scale(0.98); }
     .btn .sub { font-weight: 300; opacity: 0.82; font-size: 0.82rem; }
 
-    .install {
-      display: inline-block;
-      margin-top: 2px;
-      font-size: 0.82rem;
+    .steps-label {
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
       color: var(--text-muted);
-      text-decoration: underline;
+      margin-bottom: 12px;
+    }
+    .note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 2px;
     }
 
     .hidden { display: none; }
@@ -116,10 +121,14 @@
     </a>
 
     <div id="android-wrap">
-      <a class="btn" id="android" href="feed://raw.githubusercontent.com/PhilipSnouck/alpegg-podcast/master/feed.xml">
-        <span>Android</span><span class="sub">&middot; AntennaPod</span>
+      <p class="steps-label">Android &middot; in 2 stappen</p>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=de.danoeh.antennapod">
+        <span>1. Installeer AntennaPod</span>
       </a>
-      <a class="install" href="https://play.google.com/store/apps/details?id=de.danoeh.antennapod">Nog geen AntennaPod? Installeer die eerst</a>
+      <a class="btn" id="android" href="feed://raw.githubusercontent.com/PhilipSnouck/alpegg-podcast/master/feed.xml">
+        <span>2. Abonneer in AntennaPod</span>
+      </a>
+      <p class="note">Tik stap 2 pas nadat AntennaPod is geïnstalleerd.</p>
     </div>
 
     <footer>Besloten familiepodcast</footer>
