@@ -110,20 +110,6 @@
     .note strong { font-weight: 600; }
     .note.muted { color: var(--text-muted); font-size: 0.84rem; }
 
-    .feedline {
-      margin-top: 10px;
-      padding: 10px 12px;
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      background: var(--warm-white);
-      font-size: 0.72rem;
-      color: var(--text-muted);
-      text-align: left;
-      word-break: break-all;
-      line-height: 1.5;
-      user-select: all;
-    }
-
     .hidden { display: none; }
 
     footer { margin-top: 40px; font-size: 0.72rem; color: var(--text-muted); }
@@ -144,10 +130,9 @@
         <span>1. Kopieer de luister-link</span><span class="arrow">&#128203;</span>
       </button>
       <p class="note">2. Open de app <strong>Podcasts</strong> en tik onderin op <strong>Bibliotheek</strong> (Library).</p>
-      <p class="note">3. Tik op <strong>Follow a Show by URL</strong> (soms heet dit <strong>Voeg programma toe via URL</strong>). Heb je nog geen podcasts? Dan staat die knop midden in het scherm. Heb je er al wel? Dan rechtsboven onder <strong>&hellip;</strong>.</p>
+      <p class="note">3. Tik op <strong>Follow a Show by URL</strong> / <strong>Voeg programma toe via URL</strong>. Heb je nog geen podcasts? Dan staat die knop midden in het scherm. Heb je er al wel? Dan rechtsboven onder <strong>&hellip;</strong>.</p>
       <p class="note">4. Plak de link en tik op <strong>Follow</strong> (Volgen).</p>
-      <p class="note muted">Daarna vind je de afleveringen onder <strong>Bibliotheek</strong>. Tik een aflevering aan om te luisteren, of download die om offline te luisteren.</p>
-      <div class="feedline" id="feedline">https://raw.githubusercontent.com/PhilipSnouck/alpegg-podcast/master/feed.xml</div>
+      <p class="note">Daarna vind je de afleveringen onder <strong>Bibliotheek</strong>. Tik een aflevering aan om te luisteren, of download die om offline te luisteren.</p>
     </div>
 
     <!-- Android -->
@@ -185,12 +170,13 @@
         if (navigator.clipboard && navigator.clipboard.writeText) {
           navigator.clipboard.writeText(FEED).then(done, done);
         } else {
-          var r = document.createRange();
-          r.selectNode(document.getElementById("feedline"));
-          var s = window.getSelection();
-          s.removeAllRanges(); s.addRange(r);
+          var ta = document.createElement("textarea");
+          ta.value = FEED;
+          ta.style.position = "fixed"; ta.style.opacity = "0";
+          document.body.appendChild(ta);
+          ta.select();
           try { document.execCommand("copy"); } catch (e) {}
-          s.removeAllRanges();
+          document.body.removeChild(ta);
           done();
         }
       });
