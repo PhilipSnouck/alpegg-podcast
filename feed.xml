@@ -2,7 +2,7 @@
 
 <!--
 =======================================================
-  ALPEGG PODCAST — FEED
+  ALPEGG PODCAST - FEED
 =======================================================
 
   NIEUWE AFLEVERING TOEVOEGEN:
@@ -24,7 +24,7 @@
 <rss version="2.0" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
   <channel>
 
-    <!-- Podcastnaam en beschrijving — hoeft niet vaak aangepast te worden -->
+    <!-- Podcastnaam en beschrijving: hoeft niet vaak aangepast te worden -->
     <title>De verhalen van Alpegg</title>
     <description>We nemen jullie mee door de geschiedenis van het huis Alpegg. Van het ontstaan door Otto Lanz tot alle spannende verhalen door de generaties heen.</description>
     <language>nl</language>
@@ -141,7 +141,7 @@
     <item>
       <title>Bonus 3: Murmeltiere, Walter en het sprookje van Muhl</title>
       <description>Bibiane en Hendrik nemen ons mee in de verhalen die hun vroeger verteld werden</description>
-      <enclosure url="https://drive.google.com/uc?export=download&amp;id=1mGCyQBzkJSa9bOEtYv3g4Nai4VSvjWGh/" length="1" type="audio/mpeg"/>
+      <enclosure url="https://drive.google.com/uc?export=download&amp;id=1mGCyQBzkJSa9bOEtYv3g4Nai4VSvjWGh" length="1" type="audio/mpeg"/>
       <guid>alpegg-bonus-003</guid>
       <pubDate>Thu, 12 Jul 2026 12:00:00 +0000</pubDate>
     </item>
